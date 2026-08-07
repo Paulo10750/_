@@ -1,9 +1,11 @@
-/* Reset básico e variáveis de estilo */
+  /* =========================================================
+   1. RESET BÁSICO E VARIÁVEIS
+   ========================================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border-radius: 0 !important; /* Totalmente quadrado */
+  border-radius: 0 !important; /* Estilo 100% quadrado/reto */
 }
 
 :root {
@@ -30,11 +32,13 @@ body {
   min-height: 100vh;
 }
 
-/* Header e Navegação */
+/* =========================================================
+   2. HEADER E LOGO (Compacto)
+   ========================================================= */
 header {
   background-color: var(--bg-card);
   border-bottom: 2px solid var(--border-strong);
-  padding: 1.2rem 2rem;
+  padding: 0.6rem 1rem; /* Compacto para não ocupar muito espaço */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -48,32 +52,34 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1rem;
-  font-size: 1.3rem;
+  gap: 0.5rem;
+  font-size: 0.9rem;
   font-weight: 800;
-  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent-dark);
   white-space: nowrap;
 }
 
-/* Estilo da Imagem da Logo */
+/* Logo (Vídeo ou Foto) - Sem Borda Preta */
 .logo-img {
-  width: 38px;
-  height: 38px;
+  width: 30px;
+  height: 30px;
   object-fit: cover;
-  border: 2px solid var(--border-strong);
+  border: none !important;
   display: block;
 }
 
-/* Menu com suporte a Scroll Horizontal no celular */
+/* =========================================================
+   3. MENU DE NAVEGAÇÃO (Retangular + Zoom Automático)
+   ========================================================= */
 nav {
   max-width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  padding: 0.3rem 0;
 }
 
-/* Oculta a barra de rolagem visual mantendo a função de deslizar */
+/* Oculta a barra de rolagem mantendo a função de deslizar */
 nav::-webkit-scrollbar {
   display: none;
 }
@@ -86,70 +92,115 @@ nav ul {
   display: flex;
   flex-direction: row;
   list-style: none;
-  gap: 1.5rem;
+  gap: 0.5rem;
   margin: 0;
-  padding: 0.2rem 0;
+  padding: 0 0.5rem;
   white-space: nowrap;
+  align-items: center;
 }
 
+/* Botões RETANGULARES e Compactos */
 nav ul li {
-  flex-shrink: 0; /* Impede que os botões espremam ou cortem */
+  flex-shrink: 0;
+  width: 85px;  /* Largura do retângulo */
+  height: 36px; /* Altura do retângulo */
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-strong);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Animação que roda continuamente */
+  animation: autoZoom 5s infinite ease-in-out;
 }
 
+/* Atrasos sequenciais para cada item crescer em momentos diferentes */
+nav ul li:nth-child(1) { animation-delay: 0s; }
+nav ul li:nth-child(2) { animation-delay: 1s; }
+nav ul li:nth-child(3) { animation-delay: 2s; }
+nav ul li:nth-child(4) { animation-delay: 3s; }
+nav ul li:nth-child(5) { animation-delay: 4s; }
+
+/* Animação de Zoom Suave sem Quebrar Layout */
+@keyframes autoZoom {
+  0%, 100% {
+    transform: scale(1);
+    background-color: var(--bg-card);
+    border-color: var(--border-strong);
+  }
+  15%, 30% {
+    transform: scale(1.08); /* Zoom sutil e elegante */
+    background-color: #fff9f4;
+    border-color: var(--accent-warm);
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.9);
+    z-index: 10;
+  }
+  45% {
+    transform: scale(1);
+    background-color: var(--bg-card);
+    border-color: var(--border-strong);
+  }
+}
+
+/* Texto das Matérias (Sem estourar a caixa) */
 nav a {
   text-decoration: none;
   color: var(--text-main);
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-weight: 800;
   text-transform: uppercase;
-  font-size: 0.9rem;
-  position: relative;
-  padding-bottom: 4px;
-  display: inline-block;
+  font-size: 0.68rem;
+  text-align: center;
+  width: 100%;
+  padding: 0 4px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; /* Evita que o texto saia pra fora */
 }
 
 nav a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  left: 0;
+  display: none;
+}
+
+/* Pausa o zoom se encostar ou passar o mouse */
+nav ul li:hover {
+  animation-play-state: paused;
   background-color: var(--accent-warm);
-  transition: width 0.3s;
 }
 
-nav a:hover::after {
-  width: 100%;
+nav ul li:hover a {
+  color: #ffffff;
 }
 
-/* Estrutura Principal */
+/* =========================================================
+   4. ESTRUTURA PRINCIPAL E CONTEÚDO
+   ========================================================= */
 main {
   max-width: 800px;
   width: 100%;
-  margin: 4rem auto;
-  padding: 0 1.5rem;
+  margin: 2.5rem auto;
+  padding: 0 1.2rem;
   flex: 1;
 }
 
 .welcome-card {
   background-color: var(--bg-card);
   border: 2px solid var(--border-strong);
-  padding: 3rem;
-  margin-bottom: 3rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
   box-shadow: var(--shadow-flat);
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 800;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   color: var(--accent-dark);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   text-transform: uppercase;
   border-bottom: 2px solid var(--accent-warm);
   display: inline-block;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
 }
 
 p {
@@ -157,8 +208,8 @@ p {
 }
 
 .poem {
-  margin: 3rem 0;
-  padding: 1.5rem;
+  margin: 2rem 0;
+  padding: 1.2rem;
   border: 2px solid var(--accent-warm);
   background-color: #fff9f4;
   font-style: italic;
@@ -168,11 +219,11 @@ p {
 
 .poem::before {
   content: '"';
-  font-size: 4rem;
+  font-size: 3rem;
   color: var(--accent-warm);
   position: absolute;
-  top: -20px;
-  left: 10px;
+  top: -15px;
+  left: 8px;
   font-family: serif;
   opacity: 0.3;
 }
@@ -183,26 +234,26 @@ p {
 
 .buttons-container {
   display: flex;
-  gap: 2rem;
-  margin-top: 3rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
   flex-wrap: wrap;
 }
 
 .btn {
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 0.8rem 1.5rem;
   background-color: var(--accent-warm);
   color: #ffffff;
   text-decoration: none;
   font-weight: 700;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   border: 2px solid var(--border-strong);
   box-shadow: var(--shadow-flat);
   transition: all 0.1s ease;
   text-align: center;
   flex: 1;
-  min-width: 220px;
+  min-width: 200px;
 }
 
 .btn:hover {
@@ -218,47 +269,42 @@ footer {
   background-color: var(--bg-card);
   border-top: 2px solid var(--border-strong);
   text-align: center;
-  padding: 2rem;
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
+  padding: 1.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
   color: var(--accent-dark);
   font-weight: 600;
 }
 
-/* Responsividade para Celular */
+/* =========================================================
+   5. RESPONSIVIDADE (Celular)
+   ========================================================= */
 @media (max-width: 600px) {
   header {
-    flex-direction: column;
-    gap: 1.2rem;
-    padding: 1.2rem 1rem;
-  }
-
-  nav {
-    width: 100%;
-    padding-bottom: 0.3rem;
-  }
-
-  nav ul {
-    gap: 1.2rem;
-    justify-content: flex-start;
+    padding: 0.5rem 0.8rem;
   }
 
   .logo {
-    justify-content: center;
+    font-size: 0.8rem;
+  }
+
+  .logo-img {
+    width: 26px;
+    height: 26px;
   }
 
   .welcome-card {
-    padding: 2rem 1.5rem;
-    margin-top: 1rem;
+    padding: 1.5rem 1rem;
+    margin-top: 0.5rem;
   }
 
   h1 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .buttons-container {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
   }
   
   .btn {
