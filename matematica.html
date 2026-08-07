@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matemática Básica</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .section-title {
+      color: var(--accent-dark);
+      border-bottom: 2px solid var(--accent-warm);
+      padding-bottom: 0.5rem;
+      margin: 2rem 0 1rem 0;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+    }
+
+    .math-card {
+      background-color: var(--bg-card);
+      border: 2px solid var(--border-strong);
+      padding: 1.8rem;
+      margin-bottom: 1.8rem;
+      box-shadow: var(--shadow-flat);
+    }
+
+    .step-box {
+      background-color: #fff9f4;
+      border-left: 4px solid var(--accent-warm);
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+    }
+
+    .step-number {
+      font-weight: 800;
+      color: var(--accent-dark);
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .equation-display {
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      font-size: 1.15rem;
+      color: var(--text-main);
+      background-color: var(--bg-page);
+      padding: 0.6rem 1rem;
+      border: 1px solid var(--border-strong);
+      display: inline-block;
+      margin: 0.5rem 0;
+    }
+
+    .exercise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .exercise-card {
+      background-color: var(--bg-card);
+      border: 2px solid var(--border-strong);
+      padding: 1.2rem;
+      box-shadow: var(--shadow-flat);
+    }
+
+    .exercise-letter {
+      font-weight: 800;
+      color: var(--accent-dark);
+      font-size: 1.1rem;
+      border-bottom: 2px solid var(--accent-warm);
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .calc-steps {
+      font-family: 'Courier New', Courier, monospace;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .final-result {
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px dashed var(--accent-warm);
+      font-weight: bold;
+      color: var(--accent-dark);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+  <video src="espiral.mp4" class="logo-img" autoplay loop muted playsinline></video>
+  <span>Matemática Básica</span>
+</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="pca.html">PCA</a></li>
+        <li><a href="sociologia.html">Sociologia</a></li>
+        <li><a href="matematica.html">Matemática</a></li>
+        <li><a href="edc.html">E.d.f</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="welcome-card">
+      <h1>Matemática Básica</h1>
+      <p>Equações do 1º Grau com 1 Incógnita: Teoria, Passo a Passo e Exercícios Resolvidos.</p>
+    </section>
+
+    <!-- Teoria e Passo a Passo -->
+    <article class="math-card">
+      <h2 class="section-title">Como resolver equação do 1º grau com 1 variável</h2>
+      
+      <p>A forma geral da equação do 1º grau é:</p>
+      <div class="equation-display">ax + b = 0</div>
+      <p>Onde <strong>a</strong> e <strong>b</strong> são números reais, sendo que <strong>a ≠ 0</strong> (a não pode ser 0).</p>
+
+      <div class="step-box">
+        <div class="step-number">Exemplo:</div>
+        <p>25 + 2x = -3x - 25</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">1º Passo:</div>
+        <p>Juntar todos os "x" (termos com variável) em um lado, e todos os números sem "x" no outro lado.</p>
+        <div class="equation-display">25 + 2x = 3x - 25 = 0 &rarr; 5x + 50 = 0</div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">2º Passo:</div>
+        <p>Colocar a variável "x" e o termo independente em lados diferentes da igualdade.</p>
+        <div class="equation-display">5x = -50</div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">3º Passo:</div>
+        <p>Passar o coeficiente de "x" multiplicando ou dividindo para o outro lado.</p>
+        <div class="equation-display">x = -50 / 5</div>
+      </div>
+
+      <div class="step-box">
+        <div class="step-number">4º Passo:</div>
+        <p>Resolver a operação entre os números para encontrar o resultado final.</p>
+        <div class="equation-display">x = -10</div>
+      </div>
+    </article>
+
+    <!-- Exercícios Resolvidos -->
+    <h2 class="section-title">Exercícios: Resolva as equações do 1º grau a seguir</h2>
+
+    <div class="exercise-grid">
+
+      <!-- Item A -->
+      <div class="exercise-card">
+        <div class="exercise-letter">a) 4x - 40 = 160</div>
+        <div class="calc-steps">
+          4x = 160 + 40<br>
+          4x = 200<br>
+          x = 200 / 4
+        </div>
+        <div class="final-result">x = 50</div>
+      </div>
+
+      <!-- Item B -->
+      <div class="exercise-card">
+        <div class="exercise-letter">b) 28 - 3 - 7x = -35</div>
+        <div class="calc-steps">
+          25 - 7x = -35<br>
+          -7x = -35 - 28 + 3<br>
+          -7x = -60 - 3 = -63<br>
+          7x = 63<br>
+          x = 63 / 7
+        </div>
+        <div class="final-result">x = 9</div>
+      </div>
+
+      <!-- Item C -->
+      <div class="exercise-card">
+        <div class="exercise-letter">c) 34 = 8x + 9x + 102</div>
+        <div class="calc-steps">
+          34 = 17x + 102<br>
+          34 - 102 = 17x<br>
+          -68 = 17x<br>
+          x = -68 / 17
+        </div>
+        <div class="final-result">x = -4</div>
+      </div>
+
+      <!-- Item D -->
+      <div class="exercise-card">
+        <div class="exercise-letter">d) 12 + 38 = 85 - 4x - 4</div>
+        <div class="calc-steps">
+          50 = 81 - 4x<br>
+          4x = 81 - 50<br>
+          4x = 31<br>
+          x = 31 / 4
+        </div>
+        <div class="final-result">x = 7,75 (ou 31/4)</div>
+      </div>
+
+      <!-- Item E -->
+      <div class="exercise-card">
+        <div class="exercise-letter">e) 9x = 90x - 9837</div>
+        <div class="calc-steps">
+          9x - 90x = -9837<br>
+          -81x = -9837<br>
+          81x = 9837<br>
+          x = 9837 / 81
+        </div>
+        <div class="final-result">x = 121,44 (ou 9837/81)</div>
+      </div>
+
+      <!-- Item F -->
+      <div class="exercise-card">
+        <div class="exercise-letter">f) 45x + 9000 = 40x + 8000</div>
+        <div class="calc-steps">
+          45x - 40x = 8000 - 9000<br>
+          5x = -1000<br>
+          x = -1000 / 5
+        </div>
+        <div class="final-result">x = -200</div>
+      </div>
+
+      <!-- Item G -->
+      <div class="exercise-card">
+        <div class="exercise-letter">g) 36x = 198</div>
+        <div class="calc-steps">
+          x = 198 / 36<br>
+          x = 11 / 2
+        </div>
+        <div class="final-result">x = 5,5</div>
+      </div>
+
+      <!-- Item H -->
+      <div class="exercise-card">
+        <div class="exercise-letter">h) 495 - 3x = -180</div>
+        <div class="calc-steps">
+          -3x = -180 - 495<br>
+          -3x = -675<br>
+          3x = 675<br>
+          x = 675 / 3
+        </div>
+        <div class="final-result">x = 225</div>
+      </div>
+
+      <!-- Item I -->
+      <div class="exercise-card">
+        <div class="exercise-letter">i) 3x - 5x + 18 = 90 + 7x</div>
+        <div class="calc-steps">
+          -2x + 18 = 90 + 7x<br>
+          -2x - 7x = 90 - 18<br>
+          -9x = 72<br>
+          x = 72 / (-9)
+        </div>
+        <div class="final-result">x = -8</div>
+      </div>
+
+      <!-- Item J -->
+      <div class="exercise-card">
+        <div class="exercise-letter">j) 40 - 4(2 - x) = 0</div>
+        <div class="calc-steps">
+          40 - 8 + 4x = 0<br>
+          32 + 4x = 0<br>
+          4x = -32<br>
+          x = -32 / 4
+        </div>
+        <div class="final-result">x = -8</div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 𝒜𝓉𝓊𝓁𝒾𝒶𝓏𝒶𝒹ℴ</p>
+  </footer>
+
+</body>
+</html>
