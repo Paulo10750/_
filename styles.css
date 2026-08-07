@@ -66,11 +66,34 @@ header {
   display: block;
 }
 
+/* Menu com suporte a Scroll Horizontal no celular */
+nav {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Oculta a barra de rolagem visual mantendo a função de deslizar */
+nav::-webkit-scrollbar {
+  display: none;
+}
+nav {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 nav ul {
   display: flex;
   flex-direction: row;
   list-style: none;
   gap: 1.5rem;
+  margin: 0;
+  padding: 0.2rem 0;
+  white-space: nowrap;
+}
+
+nav ul li {
+  flex-shrink: 0; /* Impede que os botões espremam ou cortem */
 }
 
 nav a {
@@ -82,6 +105,7 @@ nav a {
   font-size: 0.9rem;
   position: relative;
   padding-bottom: 4px;
+  display: inline-block;
 }
 
 nav a::after {
@@ -206,7 +230,17 @@ footer {
   header {
     flex-direction: column;
     gap: 1.2rem;
-    padding: 1.5rem 1rem;
+    padding: 1.2rem 1rem;
+  }
+
+  nav {
+    width: 100%;
+    padding-bottom: 0.3rem;
+  }
+
+  nav ul {
+    gap: 1.2rem;
+    justify-content: flex-start;
   }
 
   .logo {
