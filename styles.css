@@ -1,0 +1,233 @@
+/* Reset básico e variáveis de estilo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 0 !important; /* Totalmente quadrado */
+}
+
+:root {
+  --bg-page: #fdfbf7;
+  --bg-card: #ffffff;
+  --text-main: #2d1b0c;
+  --text-muted: #6e5e51;
+  --accent-warm: #c1773d;
+  --accent-dark: #8b4e1e;
+  --border-strong: #000000;
+  --font-main: 'Segoe UI', system-ui, sans-serif;
+  --shadow-flat: 4px 4px 0px rgba(0,0,0,0.9);
+  --shadow-active: 1px 1px 0px rgba(0,0,0,0.9);
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.8;
+  letter-spacing: 0.1em;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header e Navegação */
+header {
+  background-color: var(--bg-card);
+  border-bottom: 2px solid var(--border-strong);
+  padding: 1.2rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  white-space: nowrap;
+}
+
+/* Estilo da Imagem da Logo */
+.logo-img {
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  border: 2px solid var(--border-strong);
+  display: block;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-warm);
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Estrutura Principal */
+main {
+  max-width: 800px;
+  width: 100%;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  flex: 1;
+}
+
+.welcome-card {
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-strong);
+  padding: 3rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-flat);
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--accent-dark);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--accent-warm);
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.poem {
+  margin: 3rem 0;
+  padding: 1.5rem;
+  border: 2px solid var(--accent-warm);
+  background-color: #fff9f4;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  position: relative;
+}
+
+.poem::before {
+  content: '"';
+  font-size: 4rem;
+  color: var(--accent-warm);
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  font-family: serif;
+  opacity: 0.3;
+}
+
+.poem p {
+  margin-bottom: 0.5rem;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--accent-warm);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 2px solid var(--border-strong);
+  box-shadow: var(--shadow-flat);
+  transition: all 0.1s ease;
+  text-align: center;
+  flex: 1;
+  min-width: 220px;
+}
+
+.btn:hover {
+  background-color: var(--accent-dark);
+}
+
+.btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: var(--shadow-active);
+}
+
+footer {
+  background-color: var(--bg-card);
+  border-top: 2px solid var(--border-strong);
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+/* Responsividade para Celular */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .logo {
+    justify-content: center;
+  }
+
+  .welcome-card {
+    padding: 2rem 1.5rem;
+    margin-top: 1rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .buttons-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
