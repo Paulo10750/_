@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>História</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .question-card {
+      background-color: var(--bg-card);
+      border: 2px solid var(--border-strong);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-flat);
+    }
+
+    .question-title {
+      font-weight: 800;
+      color: var(--accent-dark);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      border-bottom: 2px solid var(--accent-warm);
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .date-tag {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .topic-subtitle {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--accent-dark);
+      margin: 1.2rem 0 0.5rem 0;
+      text-transform: uppercase;
+    }
+
+    .notes-list {
+      padding-left: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .notes-list li {
+      margin-bottom: 0.6rem;
+      line-height: 1.7;
+      font-size: 1rem;
+      color: var(--text-main);
+    }
+
+    .quote-box {
+      background-color: #fff9f4;
+      border-left: 4px solid var(--accent-warm);
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="Fofo.gif" class="logo-img" alt="Logo">
+      <span>HISTÓRIA</span>
+    </div>
+    
+    <div class="menu-container">
+      <!-- Botão Redondo com Ícone Hambúrguer (3 Linhas) -->
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir Menu">&#9776;</button>
+      
+      <!-- Menu Dropdown Oculto -->
+      <nav class="dropdown-menu" id="dropdownMenu">
+        <span>Navegação</span>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="pca.html">PCA</a></li>
+          <li><a href="sociologia.html">Sociologia</a></li>
+          <li><a href="portugues.html">Português</a></li>
+          <li><a href="filosofia.html">Filosofia</a></li>
+          <li><a href="geografia.html">Geografia</a></li>
+          <li><a href="redacao.html">Redação</a></li>
+          <li><a href="historia.html">História</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    // Abre e fecha o menu ao clicar no botão
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdownMenu.classList.toggle('active');
+    });
+
+    // Fecha o menu ao clicar fora dele
+    document.addEventListener('click', () => {
+      dropdownMenu.classList.remove('active');
+    });
+  </script>
+
+  <main>
+    <section class="welcome-card">
+      <h1>Atividades de História</h1>
+      <p>Anotações e estudos sobre o processo histórico e a economia do Brasil Colonial.</p>
+    </section>
+
+    <div class="question-card">
+      <div class="date-tag">ATIVIDADE DE 11/08/2026</div>
+      <div class="question-title">Ciclo do Açúcar</div>
+      
+      <p>Foi o 1º grande período econômico do Brasil Colonial entre os séculos XVI e XVIII. Focado na Região Nordeste (Pernambuco e Bahia), a economia baseava-se na monocultura latifundiária, uso da mão de obra escravizada e exportação para a Europa.</p>
+
+      <h3 class="topic-subtitle">Características</h3>
+      <ul class="notes-list">
+        <li>O engenho é a unidade de produção central, dividida em Casa-Grande (elite) e Senzala (escravos).</li>
+        <li>A sociedade era patriarcal, ou seja, rigidamente hierarquizada e centrada no senhor de engenho.</li>
+        <li>A pecuária era uma atividade complementar usada para transporte e alimentação no interior.</li>
+      </ul>
+
+      <h3 class="topic-subtitle">Crise e Fim do Ciclo</h3>
+      <ul class="notes-list">
+        <li>As invasões holandesas no Nordeste interromperam temporariamente a produção. Ocorreu também a concorrência das Antilhas, pois holandeses e ingleses passaram a produzir açúcar na América Central, derrubando os preços do produto brasileiro no mercado europeu.</li>
+        <li>O ciclo do açúcar consolidou o tráfico negreiro transatlântico como alicerce de trabalho forçado, cujas marcas deixaram heranças duradouras de racismo estrutural na sociedade brasileira.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 𝒜𝓉𝓊𝓁𝒾𝒶𝓏𝒶𝒹ℴ</p>
+  </footer>
+
+</body>
+</html>
