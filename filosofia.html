@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filosofia</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .question-card {
+      background-color: var(--bg-card);
+      border: 2px solid var(--border-strong);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-flat);
+    }
+
+    .question-title {
+      font-weight: 800;
+      color: var(--accent-dark);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      border-bottom: 2px solid var(--accent-warm);
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .date-tag {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .questions-list {
+      padding-left: 1.2rem;
+    }
+
+    .questions-list li {
+      margin-bottom: 1.2rem;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      color: var(--text-main);
+    }
+  </style>
+</head>
+<body>
+
+ <header>
+    <div class="logo">
+      <video src="espiral.mp4" class="logo-img" autoplay loop muted playsinline></video>
+      <span>FILOSOFIA</span>
+    </div>
+    
+    <div class="menu-container">
+      <!-- Botão Redondo com Ícone Hambúrguer (3 Linhas) -->
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir Menu">&#9776;</button>
+      
+      <!-- Menu Dropdown Oculto -->
+      <nav class="dropdown-menu" id="dropdownMenu">
+        <span>Navegação</span>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="pca.html">PCA</a></li>
+          <li><a href="sociologia.html">Sociologia</a></li>
+          <li><a href="portugues.html">Português</a></li>
+          <li><a href="filosofia.html">Filosofia</a></li>
+          <li><a href="geografia.html">Geografia</a></li>
+          <li><a href="redacao.html">Redação</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    // Abre e fecha o menu ao clicar no botão
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdownMenu.classList.toggle('active');
+    });
+
+    // Fecha o menu ao clicar fora dele
+    document.addEventListener('click', () => {
+      dropdownMenu.classList.remove('active');
+    });
+  </script>
+
+  <main>
+    <section class="welcome-card">
+      <h1>Atividades de Filosofia</h1>
+      <p>Estudos, questionamentos e exercícios sobre a Metafísica e História da Filosofia.</p>
+    </section>
+
+    <div class="question-card">
+      <div class="date-tag">ATIVIDADE DE 10/08/2026</div>
+      <div class="question-title">Questionário – Metafísica</div>
+      
+      <ol class="questions-list">
+        <li>Explique o que é metafísica e qual é o objetivo principal dessa área da filosofia segundo o texto.</li>
+        <li>Qual foi a principal diferença entre os filósofos metafísicos na busca pela explicação da realidade?</li>
+        <li>Explique por que Aristóteles considerava a inteligência uma forma de conhecimento superior ao domínio prático.</li>
+        <li>O problema do ser humano foi importante para o desenvolvimento da metafísica. Explique qual era a questão relacionada ao Ser que preocupava Platão.</li>
+        <li>Como Heráclito compreendia o ser humano e o conceito do "eterno devir"? Explique utilizando o exemplo do rio apresentado no texto.</li>
+        <li>Por que Platão considerava insuficiente o conhecimento obtido exclusivamente por meio dos sentidos?</li>
+        <li>Explique a relação entre o mundo das ideias e o mundo físico na filosofia de Platão.</li>
+        <li>O que representa o mito da caverna dentro da concepção de Platão?</li>
+        <li>Explique o significado da expressão "Segunda Navegação" utilizada no texto para caracterizar o pensamento de Platão.</li>
+        <li>Qual foi a principal crítica feita por Aristóteles à metafísica de Platão?</li>
+        <li>Explique o conceito aristotélico de substância (ousia) e sua relação com matéria, forma e essência.</li>
+        <li>Utilizando o exemplo da cadeira apresentado no texto, explique por que Aristóteles considera a matéria necessária para a existência da substância.</li>
+        <li>O que é o motor imóvel na filosofia de Aristóteles e por que ele é considerado a causa primordial de todas as coisas?</li>
+        <li>Explique a crítica de Immanuel Kant à metafísica. Por que, segundo Kant, não seria possível provar racionalmente a existência de Deus ou a imortalidade da alma?</li>
+        <li>Compare as concepções de Platão, Aristóteles e Kant sobre a metafísica, destacando uma característica fundamental do pensamento de cada filósofo.</li>
+      </ol>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 𝒜𝓉𝓊𝓁𝒾𝒶𝓏𝒶𝒹ℴ</p>
+  </footer>
+
+</body>
+</html>

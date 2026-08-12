@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sociologia</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .question-card {
+      background-color: var(--bg-card);
+      border: 2px solid var(--border-strong);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-flat);
+    }
+
+    .question-title {
+      font-weight: 800;
+      color: var(--accent-dark);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      border-bottom: 2px solid var(--accent-warm);
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .date-tag {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .question-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-main);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <video src="espiral.mp4" class="logo-img" autoplay loop muted playsinline></video>
+      <span>SOCIOLOGÍA</span>
+    </div>
+    
+    <div class="menu-container">
+      <!-- Botão Redondo com Ícone Hambúrguer (3 Linhas) -->
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir Menu">&#9776;</button>
+      
+      <!-- Menu Dropdown Oculto -->
+      <nav class="dropdown-menu" id="dropdownMenu">
+        <span>Navegação</span>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="pca.html">PCA</a></li>
+          <li><a href="sociologia.html">Sociologia</a></li>
+          <li><a href="portugues.html">Português</a></li>
+          <li><a href="filosofia.html">Filosofia</a></li>
+          <li><a href="geografia.html">Geografia</a></li>
+          <li><a href="redacao.html">Redação</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    // Abre e fecha o menu ao clicar no botão
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdownMenu.classList.toggle('active');
+    });
+
+    // Fecha o menu ao clicar fora dele
+    document.addEventListener('click', () => {
+      dropdownMenu.classList.remove('active');
+    });
+  </script>
+
+  <main>
+    <section class="welcome-card">
+      <h1>Atividades de Sociologia</h1>
+      <p>Registros, questões e reflexões sobre os temas discutidos nas aulas.</p>
+    </section>
+
+    <div class="question-card">
+      <div class="date-tag">ATIVIDADE DE 06/08/2026</div>
+      <div class="question-title">Questão 1 – Desnaturalização da Realidade Social</div>
+      
+      <p class="question-text">
+        Desnaturalizar a realidade social significa compreender que as formações e instituições sociais são produtos da história e não um dado de uma natureza inata aos seres humanos. Quais as consequências dessa perspectiva em nossas práxis políticas e cotidianas?
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 𝒜𝓉𝓊𝓁𝒾𝒶𝓏𝒶𝒹ℴ</p>
+  </footer>
+
+</body>
+</html>

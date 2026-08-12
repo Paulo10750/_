@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redação</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .question-card {
+      background-color: var(--bg-card);
+      border: 2px solid var(--border-strong);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-flat);
+    }
+
+    .question-title {
+      font-weight: 800;
+      color: var(--accent-dark);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      border-bottom: 2px solid var(--accent-warm);
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .date-tag {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .topic-subtitle {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--accent-dark);
+      margin: 1.2rem 0 0.5rem 0;
+      text-transform: uppercase;
+    }
+
+    .notes-list {
+      padding-left: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .notes-list li {
+      margin-bottom: 0.6rem;
+      line-height: 1.7;
+      font-size: 1rem;
+      color: var(--text-main);
+    }
+
+    .nested-list {
+      padding-left: 1.5rem;
+      margin-top: 0.3rem;
+      list-style-type: disc;
+    }
+
+    /* Tabela compacta e limpa */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table th, .comparison-table td {
+      border: 1px solid var(--border-strong);
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    .comparison-table th {
+      background-color: var(--accent-warm);
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+
+    .comparison-table td strong {
+      color: var(--accent-dark);
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #f0f0f0;
+      color: #333;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+
+    .activity-box {
+      background-color: #fff9f4;
+      border-left: 4px solid var(--accent-warm);
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <video src="espiral.mp4" class="logo-img" autoplay loop muted playsinline></video>
+      <span>REDAÇÃO</span>
+    </div>
+    
+    <div class="menu-container">
+      <!-- Botão Redondo com Ícone Hambúrguer (3 Linhas) -->
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir Menu">&#9776;</button>
+      
+      <!-- Menu Dropdown Oculto -->
+      <nav class="dropdown-menu" id="dropdownMenu">
+        <span>Navegação</span>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="pca.html">PCA</a></li>
+          <li><a href="sociologia.html">Sociologia</a></li>
+          <li><a href="portugues.html">Português</a></li>
+          <li><a href="filosofia.html">Filosofia</a></li>
+          <li><a href="geografia.html">Geografia</a></li>
+          <li><a href="redacao.html">Redação</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    // Abre e fecha o menu ao clicar no botão
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdownMenu.classList.toggle('active');
+    });
+
+    // Fecha o menu ao clicar fora dele
+    document.addEventListener('click', () => {
+      dropdownMenu.classList.remove('active');
+    });
+  </script>
+
+  <main>
+    <section class="welcome-card">
+      <h1>Atividades de Redação</h1>
+      <p>Estudos sobre gêneros textuais, tipologia textual e estrutura de cartas.</p>
+    </section>
+
+    <div class="question-card">
+      <div class="date-tag">ATIVIDADE DE 10/08/2026</div>
+      <div class="question-title">Estrutura do Gênero "Carta"</div>
+      
+      <p>É formada por 5 ou 6 partes principais: <strong>cabeçalho, vocativo, corpo do texto, despedida, assinatura e P.S.</strong></p>
+
+      <h3 class="topic-subtitle">Partes da Carta</h3>
+      <ol class="notes-list">
+        <li><strong>Cabeçalho:</strong> Local e data em que a carta foi escrita.<br><em>Ex.: Brasília, 10 de agosto de 2026.</em></li>
+        <li><strong>Vocativo:</strong> Nome ou forma de tratamento para chamar o destinatário que pode ser íntimo (<em>Querida, mãe</em>) ou formal (<em>Prezado, Senhor</em>).</li>
+        <li><strong>Corpo do texto:</strong> A mensagem principal da carta. É dividida em:
+          <ul class="nested-list">
+            <li>Introdução</li>
+            <li>Desenvolvimento</li>
+            <li>Conclusão</li>
+          </ul>
+        </li>
+        <li><strong>Despedida:</strong> Frase curta de encerramento, como "Com carinho" para amigos, ou "Atenciosamente" para trabalho.</li>
+        <li><strong>Assinatura:</strong> O nome de quem escreveu a carta.</li>
+        <li><strong>P.S. (Pós-escrito):</strong> Informação escrita "extra" ao final da carta.</li>
+      </ol>
+    </div>
+
+    <div class="question-card">
+      <div class="date-tag">ATIVIDADE DE 10/08/2026</div>
+      <div class="question-title">Tipologia Textual vs. Gênero Textual</div>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Tipologia (Estrutura / Organização)</th>
+            <th>Gênero Textual (Função Social / Prática)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <strong>Dissertativa Argumentativa</strong>
+              <div class="badge">Defende opinião / Tese</div>
+            </td>
+            <td>Artigo de opinião, ensaio, carta argumentativa</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Dissertativa Expositiva</strong>
+              <div class="badge">Apenas informa / Fato</div>
+            </td>
+            <td>Notícia, reportagem, verbete</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Narrativa</strong>
+              <div class="badge">Personagem, enredo, tempo e espaço</div>
+            </td>
+            <td>Romance, novela, conto, diário</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Descritiva</strong>
+              <div class="badge">Detalhamento de imagens / Cenas</div>
+            </td>
+            <td>Cardápio, anúncio, lista de compras</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Injuntiva / Instrucional</strong>
+              <div class="badge">Instruções / Passo a passo</div>
+            </td>
+            <td>Receita culinária, bula de remédio, manual</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="question-card">
+      <div class="date-tag">ATIVIDADE AVALIATIVA</div>
+      <div class="question-title">Atividade Avaliativa – Carta de Opinião</div>
+      
+      <div class="activity-box">
+        <p><strong>Tema:</strong> Carta ao Presidente da Argentina, Senhor Javier Milei, sobre o conflito entre Milei e Lula.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 𝒜𝓉𝓊𝓁𝒾𝒶𝓏𝒶𝒹ℴ</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Língua Portuguesa</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .question-card {
+      background-color: var(--bg-card);
+      border: 2px solid var(--border-strong);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-flat);
+    }
+
+    .question-title {
+      font-weight: 800;
+      color: var(--accent-dark);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      border-bottom: 2px solid var(--accent-warm);
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .date-tag {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .question-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-main);
+    }
+
+    .answers-list {
+      margin-top: 1rem;
+      padding-left: 1.2rem;
+    }
+
+    .answers-list li {
+      margin-bottom: 0.6rem;
+      line-height: 1.6;
+    }
+
+    .conjunction {
+      text-decoration: underline;
+      font-weight: bold;
+      color: var(--accent-dark);
+    }
+
+    .classification {
+      font-weight: 700;
+      color: var(--accent-warm);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <video src="espiral.mp4" class="logo-img" autoplay loop muted playsinline></video>
+      <span>PORTUGUÊS</span>
+    </div>
+    
+    <div class="menu-container">
+      <!-- Botão Redondo com Ícone Hambúrguer (3 Linhas) -->
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir Menu">&#9776;</button>
+      
+      <!-- Menu Dropdown Oculto -->
+      <nav class="dropdown-menu" id="dropdownMenu">
+        <span>Navegação</span>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="pca.html">PCA</a></li>
+          <li><a href="sociologia.html">Sociologia</a></li>
+          <li><a href="portugues.html">Português</a></li>
+          <li><a href="filosofia.html">Filosofia</a></li>
+          <li><a href="geografia.html">Geografia</a></li>
+          <li><a href="redacao.html">Redação</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    // Abre e fecha o menu ao clicar no botão
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdownMenu.classList.toggle('active');
+    });
+
+    // Fecha o menu ao clicar fora dele
+    document.addEventListener('click', () => {
+      dropdownMenu.classList.remove('active');
+    });
+  </script>
+
+  <main>
+    <section class="welcome-card">
+      <h1>Atividades de Língua Portuguesa</h1>
+      <p>Exercícios, análises sintáticas e estudos gramaticais das aulas.</p>
+    </section>
+
+    <div class="question-card">
+      <div class="date-tag">ATIVIDADE DE 10/08/2026</div>
+      <div class="question-title">Classificação das Orações Coordenadas</div>
+      
+      <p class="question-text">
+        <strong>2 - Classifique as orações coordenadas:</strong>
+      </p>
+
+      <ol type="a" class="answers-list">
+        <li>Os alunos estudaram bastante <span class="conjunction">e</span> conseguiram boas notas. — <span class="classification">Aditiva</span></li>
+        <li>Queriam participar da competição, <span class="conjunction">mas</span> não conseguiram se inscrever. — <span class="classification">Adversativa</span></li>
+        <li>Ou você organiza seus estudos <span class="conjunction">ou</span> terá dificuldades nas avaliações. — <span class="classification">Alternativa</span></li>
+        <li>O trânsito estava intenso, <span class="conjunction">portanto</span> chegamos atrasados. — <span class="classification">Conclusiva</span></li>
+        <li>Não faça barulho, <span class="conjunction">pois</span> estou com dor de cabeça. — <span class="classification">Explicativa</span></li>
+        <li>Gostaria de viajar, <span class="conjunction">porém</span> preciso economizar dinheiro. — <span class="classification">Adversativa</span></li>
+        <li><span class="conjunction">Ora</span> ria, <span class="conjunction">ora</span> chorava durante o filme. — <span class="classification">Alternativa</span></li>
+        <li>Treinou durante meses, <span class="conjunction">logo</span> conquistou a vitória. — <span class="classification">Conclusiva</span></li>
+        <li>Fecha a porta <span class="conjunction">porque</span> está ventando muito. — <span class="classification">Explicativa</span></li>
+        <li>A proposta era interessante, <span class="conjunction">contudo</span> não foi aprovada. — <span class="classification">Adversativa</span></li>
+        <li>A equipe trabalhou com dedicação, <span class="conjunction">assim</span> alcançou excelentes resultados. — <span class="classification">Conclusiva</span></li>
+        <li>Acelere o passo, <span class="conjunction">que</span> estamos atrasados. — <span class="classification">Explicativa</span></li>
+        <li>O dia estava ensolarado, <span class="conjunction">entretanto</span> ninguém foi à praia. — <span class="classification">Adversativa</span></li>
+        <li><span class="conjunction">Quer</span> estude em casa, <span class="conjunction">quer</span> estude na biblioteca, mantenha uma rotina constante. — <span class="classification">Alternativa</span></li>
+      </ol>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 𝒜𝓉𝓊𝓁𝒾𝒶𝓏𝒶𝒹ℴ</p>
+  </footer>
+
+</body>
+</html>
